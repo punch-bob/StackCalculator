@@ -2,7 +2,7 @@ package src.operations;
 
 import java.util.Stack;
 import src.ExecutionContext;
-import src.exception.InvalidStackSize;
+import src.exception.stack_size_exception.InvalidStackSize;
 
 public class OperationPrint implements Operation
 {
