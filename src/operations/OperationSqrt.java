@@ -2,8 +2,8 @@ package src.operations;
 
 import java.util.Stack;
 import src.ExecutionContext;
-import src.exception.InvalidStackSize;
-import src.exception.SqrtOfNegativeNumber;
+import src.exception.math_exceptions.SqrtOfNegativeNumber;
+import src.exception.stack_size_exception.InvalidStackSize;
 
 public class OperationSqrt implements Operation
 {

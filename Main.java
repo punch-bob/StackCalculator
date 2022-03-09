@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 import src.ExecutionContext;
 import src.OperationFactory;
 import src.exception.CalculatorException;
-import src.exception.UnregisteredOperation;
+import src.exception.undeclared_data_exceptions.UndeclaredOperation;
 import src.operations.Operation;
 
 public class Main
@@ -47,15 +47,14 @@ public class Main
                     }
                     else
                     {
-                        throw new UnregisteredOperation(slpitedComandLine[0]);
+                        throw new UndeclaredOperation(slpitedComandLine[0]);
                     }
-                    comandLine = in.readLine();
                 }
                 catch (CalculatorException e)
                 {
                    System.err.println(e);
                 }
-                
+                comandLine = in.readLine();
             }
         }
         catch(IOException e)

@@ -3,10 +3,10 @@ package src.operations;
 import src.ConstantNumber;
 import src.ExecutionContext;
 import src.Variable;
-import src.exception.InvalidArgument;
-import src.exception.InvalidArgumentsLine;
-import src.exception.InvalidNumberFormat;
-import src.exception.InvalidVariableName;
+import src.exception.argument_exceptions.InvalidArgument;
+import src.exception.argument_exceptions.ArgumentsCountException;
+import src.exception.argument_exceptions.InvalidNumberFormat;
+import src.exception.argument_exceptions.InvalidVariableName;
 
 public class OperationDefine implements Operation
 {
@@ -21,7 +21,7 @@ public class OperationDefine implements Operation
         }
         catch(ArrayIndexOutOfBoundsException e)
         {
-            throw new InvalidArgumentsLine("DEFINE", e);
+            throw new ArgumentsCountException("DEFINE", e);
         }
         catch (NumberFormatException e)
         {

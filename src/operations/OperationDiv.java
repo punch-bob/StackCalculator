@@ -2,8 +2,8 @@ package src.operations;
 
 import java.util.Stack;
 import src.ExecutionContext;
-import src.exception.DivisionByZero;
-import src.exception.InvalidStackSize;
+import src.exception.math_exceptions.DivisionByZero;
+import src.exception.stack_size_exception.InvalidStackSize;
 
 public class OperationDiv implements Operation
 {
