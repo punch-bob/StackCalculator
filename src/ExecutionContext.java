@@ -1,6 +1,8 @@
 package src;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Stack;
 
 public class ExecutionContext 
 {
@@ -12,7 +14,7 @@ public class ExecutionContext
         this.variableMap = new HashMap<>();
     }
 
-    public Stack <Double> getStack()
+    public Stack<Double> getStack()
     {
         return this.stack;
     }

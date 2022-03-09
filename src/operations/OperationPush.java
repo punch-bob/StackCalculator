@@ -1,12 +1,15 @@
 package src.operations;
 
 import java.util.Stack;
+
+import src.ConstantNumber;
 import src.ExecutionContext;
+import src.exception.InvalidNumberFormat;
 
 public class OperationPush implements Operation
 {
     @Override
-    public void execute(ExecutionContext executionContext, String[] arguments) 
+    public void execute(ExecutionContext executionContext, String[] arguments) throws InvalidNumberFormat 
     {
         Stack<Double> stack = executionContext.getStack();
         if (executionContext.getMap().containsKey(arguments[1]))
@@ -17,11 +20,12 @@ public class OperationPush implements Operation
         {
             try
             {
-                stack.push(Double.parseDouble(arguments[1]));
+                ConstantNumber numb = new ConstantNumber(arguments[1]);
+                stack.push(numb.getNumber());
             }
             catch (NumberFormatException e)
             {
-                System.out.println("Bad format of number!");
+                throw new InvalidNumberFormat("PUSH", e);
             }
         }
     }

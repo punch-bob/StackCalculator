@@ -2,24 +2,21 @@ package src.operations;
 
 import java.util.Stack;
 import src.ExecutionContext;
+import src.exception.InvalidStackSize;
 
 public class OperationMult implements Operation
 {
     @Override
-    public void execute(ExecutionContext executionContext, String[] arguments) 
+    public void execute(ExecutionContext executionContext, String[] arguments) throws InvalidStackSize 
     {
         Stack<Double> stack = executionContext.getStack();
-        if (stack.size() == 0)
+        if (stack.size() < 2)
         {
-            System.out.println("stack is empty, operation can't be performed!");
-        }
-        if (stack.size() == 1)
-        {
-            System.out.println("not enought elements on the stack, operation can't be performed!");
+            throw new InvalidStackSize("MULTIPLICATION");
         }
         else
         {
             stack.push(stack.pop() * stack.pop());
         }
-    }   
+    }
 }

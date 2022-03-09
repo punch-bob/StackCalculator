@@ -2,20 +2,30 @@ package src.operations;
 
 import java.util.Stack;
 import src.ExecutionContext;
+import src.exception.InvalidStackSize;
+import src.exception.SqrtOfNegativeNumber;
 
 public class OperationSqrt implements Operation
 {
     @Override
-    public void execute(ExecutionContext executionContext, String[] arguments) 
+    public void execute(ExecutionContext executionContext, String[] arguments) throws InvalidStackSize, SqrtOfNegativeNumber 
     {
         Stack<Double> stack = executionContext.getStack();
         if (stack.size() == 0)
         {
-            System.out.println("stack is empty, operation can't be performed!");
+            throw new InvalidStackSize("SQRT");
         }
         else
         {
-            stack.push(Math.sqrt(stack.pop()));
+            double number = stack.pop();
+            if (number >= 0)
+            {
+                stack.push(Math.sqrt(number));
+            }
+            else
+            {
+                throw new SqrtOfNegativeNumber(String.valueOf(number));
+            }
         }
     }
 }

@@ -2,27 +2,25 @@ package src.operations;
 
 import java.util.Stack;
 import src.ExecutionContext;
+import src.exception.DivisionByZero;
+import src.exception.InvalidStackSize;
 
 public class OperationDiv implements Operation
 {
     @Override
-    public void execute(ExecutionContext executionContext, String[] arguments) 
+    public void execute(ExecutionContext executionContext, String[] arguments) throws InvalidStackSize, DivisionByZero 
     {
         Stack<Double> stack = executionContext.getStack();
-        if (stack.size() == 0)
+        if (stack.size() < 2)
         {
-            System.out.println("stack is empty, operation can't be performed!");
-        }
-        if (stack.size() == 1)
-        {
-            System.out.println("not enought elements on the stack, operation can't be performed!");
+            throw new InvalidStackSize("DIVISION");
         }
         else
         {
             
             if(stack.peek() == 0)
             {
-                System.out.println("can't divide by zero");
+                throw new DivisionByZero("You can't divide by zero!");
             }
             else
             {

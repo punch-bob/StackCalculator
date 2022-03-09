@@ -1,7 +1,10 @@
 package src;
 
-import java.io.*;
-import java.util.*;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Properties;
 
 import src.operations.Operation;
 
@@ -13,42 +16,44 @@ public class OperationFactory
         operationMap = new HashMap<>();
         Properties properties = new Properties();
         
+        InputStream in = OperationFactory.class.getResourceAsStream("Operations.properties");
         try
         {
-            InputStream in = OperationFactory.class.getResourceAsStream("Operations.properties");
-            try
-            {
-                properties.load(in);
-            }
-            catch(IOException e)
-            {
-                System.err.println("Error while loading stream file: " + e.getLocalizedMessage());
-            }
+            properties.load(in);
+        }
+        catch(IOException e)
+        {
+            System.err.println("Error while loading properties file: " + e.getLocalizedMessage());
+        }
 
-            for(String operationName : properties.stringPropertyNames())
+        for(String operationName : properties.stringPropertyNames())
+        {
+            if (!operationMap.containsKey(operationName))
             {
-                if (!operationMap.containsKey(operationName))
+                try
                 {
-                    try
-                    {
-                        //Class<?> newOperation = ;
-                        operationMap.put(operationName, (Operation)Class.forName(properties.getProperty(operationName)).getDeclaredConstructor().newInstance());
-                    }
-                    catch(Exception e)
-                    {
-                        System.err.println("failed to read class:" + operationName);
-                    }
+                    Class<?> operationClass = Class.forName(properties.getProperty(operationName));
+                    Operation newOperation = (Operation)operationClass.getDeclaredConstructor().newInstance();
+                    operationMap.put(operationName, newOperation);
+                }
+                catch (ClassNotFoundException e)
+                {
+                    System.err.println("Failed to read class:" + operationName);
+                }
+                catch (InstantiationException | IllegalAccessException e)
+                {
+                    System.err.println("Failed to instantiate operation: " + operationName);
+                }
+                catch (Exception e)
+                {
+                    System.err.println(e);
                 }
             }
         }
-        catch(NullPointerException e)
-        {
-            System.err.println("Error while reading file: " + e.getLocalizedMessage());
-        }
     }
 
-    public Operation getOperation(String operationName)
+    public Operation getOperationByName(String operationName)
     {
-        return operationMap.get(operationName);
+        return operationMap.get(operationName.toUpperCase());
     }
 }
