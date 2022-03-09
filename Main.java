@@ -52,7 +52,7 @@ public class Main
                 }
                 catch (CalculatorException e)
                 {
-                   System.err.println(e);
+                    e.printStackTrace();
                 }
                 comandLine = in.readLine();
             }
