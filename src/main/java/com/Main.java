@@ -50,7 +50,7 @@ public class Main
                         throw new UndeclaredOperation(slpitedComandLine[0]);
                     }
                 }
-                catch (CalculatorException e)
+                catch (CalculatorException | ArrayIndexOutOfBoundsException e)
                 {
                     e.printStackTrace();
                 }
