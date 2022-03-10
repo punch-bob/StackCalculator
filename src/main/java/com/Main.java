@@ -5,14 +5,31 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+import java.util.logging.Level;
+import java.util.logging.LogManager;
+import java.util.logging.Logger;
+
 import com.exception.CalculatorException;
 import com.exception.undeclared_data_exceptions.UndeclaredOperation;
 import com.operations.Operation;
 
 public class Main
 {
+    
     public static void main(String[] args)
     {
+        //config logging
+        try 
+        {
+            LogManager.getLogManager().readConfiguration(Main.class.getResourceAsStream("./resourses/logging.properties"));
+        } 
+        catch (SecurityException | IOException e) 
+        {
+            e.printStackTrace();
+        }
+        Logger log = Logger.getLogger(Main.class.getName());
+
+        //choose stream
         BufferedReader in = null;
         if(args.length > 0)
         {
@@ -23,6 +40,7 @@ public class Main
             catch(IOException e)
             {
                 System.err.println("Error while reading file: " + e.getLocalizedMessage());
+                log.log(Level.INFO, "Exception: ", e);
             }
         }
         else
@@ -30,6 +48,7 @@ public class Main
             in = new BufferedReader(new InputStreamReader(System.in));
         }
 
+        //factory working
         try
         {
             OperationFactory factory = new OperationFactory();
@@ -53,6 +72,7 @@ public class Main
                 catch (CalculatorException | ArrayIndexOutOfBoundsException e)
                 {
                     e.printStackTrace();
+                    log.log(Level.INFO, "Exception: ", e);
                 }
                 comandLine = in.readLine();
             }
@@ -60,6 +80,7 @@ public class Main
         catch(IOException e)
         {
            System.err.println("Error while reading file: " + e.getLocalizedMessage());
+           log.log(Level.INFO, "Exception: ", e);
         }
     }
 }

@@ -1,0 +1,24 @@
+мар. 11, 2022 1:22:27 AM com.Main main
+INFO: Exception: 
+com.exception.stack_size_exception.InvalidStackSize: Not enought numbers on the stack to perfome the operation: POP
+	at com.operations.OperationPop.execute(OperationPop.java:16)
+	at com.Main.main(Main.java:65)
+
+мар. 11, 2022 1:22:40 AM com.Main main
+INFO: Exception: 
+com.exception.argument_exceptions.InvalidNumberFormat: Incorrect format of number in: DEFINE operation!
+	at com.operations.OperationDefine.execute(OperationDefine.java:28)
+	at com.Main.main(Main.java:65)
+Caused by: java.lang.NumberFormatException: For input string: "a"
+	at java.base/jdk.internal.math.FloatingDecimal.readJavaFormatString(FloatingDecimal.java:2054)
+	at java.base/jdk.internal.math.FloatingDecimal.parseDouble(FloatingDecimal.java:110)
+	at java.base/java.lang.Double.parseDouble(Double.java:651)
+	at com.ConstantNumber.<init>(ConstantNumber.java:11)
+	at com.operations.OperationDefine.execute(OperationDefine.java:19)
+	... 1 more
+
+мар. 11, 2022 1:22:46 AM com.Main main
+INFO: Exception: 
+com.exception.undeclared_data_exceptions.UndeclaredOperation: The operation 'p' wasn't found!
+	at com.Main.main(Main.java:69)
+
