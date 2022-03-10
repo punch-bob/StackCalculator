@@ -11,7 +11,7 @@ public class OperationPrint implements Operation
     public void execute(ExecutionContext executionContext, String[] arguments) throws InvalidStackSize 
     {
         Stack<Double> stack = executionContext.getStack();
-        if (stack.size() < 0)
+        if (stack.size() < 1)
         {
             throw new InvalidStackSize("PRINT");
         }

@@ -12,7 +12,7 @@ public class OperationSqrt implements Operation
     public void execute(ExecutionContext executionContext, String[] arguments) throws InvalidStackSize, SqrtOfNegativeNumber 
     {
         Stack<Double> stack = executionContext.getStack();
-        if (stack.size() == 0)
+        if (stack.size() < 1)
         {
             throw new InvalidStackSize("SQRT");
         }
