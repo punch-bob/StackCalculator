@@ -11,13 +11,15 @@ public class OperationSub implements Operation
     public void execute(ExecutionContext executionContext, String[] arguments) throws InvalidStackSize 
     {
         Stack<Double> stack = executionContext.getStack();
-        if (stack.size() == 0)
+        if (stack.size() < 2)
         {
             throw new InvalidStackSize("SUBTRACT");
         }
         else
         {
-            stack.push(stack.pop() - stack.pop());
+            Double subtrahend = stack.pop();
+            Double minuend = stack.pop();
+            stack.push(minuend - subtrahend);
         }
     }
 }
