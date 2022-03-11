@@ -6,18 +6,7 @@ public class ConstantNumber
 
     public ConstantNumber(String str)
     {
-        try 
-        {
-            this.number = Double.parseDouble(str);
-        }
-        catch (NumberFormatException e)
-        {
-            throw e;
-        }
-        catch (NullPointerException e)
-        {
-            throw e;
-        }
+        this.number = Double.parseDouble(str);
     }
 
     public Double getNumber()
