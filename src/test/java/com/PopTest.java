@@ -3,7 +3,7 @@ package com;
 import org.junit.jupiter.api.Test;
 
 import com.exception.stack_size_exception.InvalidStackSize;
-import com.operations.Operation;
+import com.operations.OperationPop;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
@@ -13,9 +13,8 @@ public class PopTest
     @Test
     public void popTest()
     {
-        OperationFactory factory = new OperationFactory();
         ExecutionContext executionContext = new ExecutionContext();
-        Operation pop = factory.getOperationByName("POP");
+        OperationPop pop = new OperationPop();
         executionContext.getStack().add(2.0);
         executionContext.getStack().add(4.0);
         pop.execute(executionContext, null);
@@ -25,9 +24,8 @@ public class PopTest
     @Test
     public void popEmptyStackTest()
     {
-        OperationFactory factory = new OperationFactory();
         ExecutionContext executionContext = new ExecutionContext();
-        Operation pop = factory.getOperationByName("POP");
+        OperationPop pop = new OperationPop();
         assertThrows(InvalidStackSize.class, () -> pop.execute(executionContext, null));        
     }
 }

@@ -3,7 +3,7 @@ package com;
 import org.junit.jupiter.api.Test;
 
 import com.exception.stack_size_exception.InvalidStackSize;
-import com.operations.Operation;
+import com.operations.OperationMult;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
@@ -13,9 +13,8 @@ public class MultTest
     @Test
     public void multTest()
     {
-        OperationFactory factory = new OperationFactory();
         ExecutionContext executionContext = new ExecutionContext();
-        Operation mult = factory.getOperationByName("*");
+        OperationMult mult = new OperationMult();
         executionContext.getStack().push(2.0);
         executionContext.getStack().push(10.0);
         mult.execute(executionContext, null);
@@ -25,9 +24,8 @@ public class MultTest
     @Test
     public void multNotEnoughArgsTest()
     {
-        OperationFactory factory = new OperationFactory();
         ExecutionContext executionContext = new ExecutionContext();
-        Operation mult = factory.getOperationByName("*");
+        OperationMult mult = new OperationMult();
         executionContext.getStack().push(2.0);
         assertThrows(InvalidStackSize.class, () -> mult.execute(executionContext, null));        
     }
@@ -35,9 +33,8 @@ public class MultTest
     @Test
     public void multEmptyStackTest()
     {
-        OperationFactory factory = new OperationFactory();
         ExecutionContext executionContext = new ExecutionContext();
-        Operation mult = factory.getOperationByName("*");
+        OperationMult mult = new OperationMult();
         assertThrows(InvalidStackSize.class, () -> mult.execute(executionContext, null));        
     }
 }

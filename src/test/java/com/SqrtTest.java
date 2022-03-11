@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 
 import com.exception.math_exceptions.SqrtOfNegativeNumber;
 import com.exception.stack_size_exception.InvalidStackSize;
-import com.operations.Operation;
+import com.operations.OperationSqrt;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
@@ -14,9 +14,8 @@ public class SqrtTest
     @Test
     public void sqrtTest()
     {
-        OperationFactory factory = new OperationFactory();
         ExecutionContext executionContext = new ExecutionContext();
-        Operation sqrt = factory.getOperationByName("SQRT");
+        OperationSqrt sqrt = new OperationSqrt();
         executionContext.getStack().push(4.0);
         sqrt.execute(executionContext, null);
         assertEquals(2.0, executionContext.getStack().pop());
@@ -25,9 +24,8 @@ public class SqrtTest
     @Test
     public void sqrtNegativeNumberTest()
     {
-        OperationFactory factory = new OperationFactory();
         ExecutionContext executionContext = new ExecutionContext();
-        Operation sqrt = factory.getOperationByName("SQRT");
+        OperationSqrt sqrt = new OperationSqrt();
         executionContext.getStack().push(-4.0);
         assertThrows(SqrtOfNegativeNumber.class, () -> sqrt.execute(executionContext, null));
     }
@@ -35,9 +33,8 @@ public class SqrtTest
     @Test
     public void sqrtEmptyStackTest()
     {
-        OperationFactory factory = new OperationFactory();
         ExecutionContext executionContext = new ExecutionContext();
-        Operation sqrt = factory.getOperationByName("SQRT");
+        OperationSqrt sqrt = new OperationSqrt();
         assertThrows(InvalidStackSize.class, () -> sqrt.execute(executionContext, null));
     }
 }

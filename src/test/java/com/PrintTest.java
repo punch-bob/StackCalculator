@@ -3,7 +3,7 @@ package com;
 import org.junit.jupiter.api.Test;
 
 import com.exception.stack_size_exception.InvalidStackSize;
-import com.operations.Operation;
+import com.operations.OperationPrint;
 
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
@@ -12,9 +12,8 @@ public class PrintTest
     @Test
     public void printEmptyStackTest()
     {
-        OperationFactory factory = new OperationFactory();
         ExecutionContext executionContext = new ExecutionContext();
-        Operation print = factory.getOperationByName("PRINT");
+        OperationPrint print = new OperationPrint();
         assertThrows(InvalidStackSize.class, () -> print.execute(executionContext, null));
     }
 }

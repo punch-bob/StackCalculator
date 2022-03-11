@@ -3,7 +3,7 @@ package com;
 import org.junit.jupiter.api.Test;
 
 import com.exception.stack_size_exception.InvalidStackSize;
-import com.operations.Operation;
+import com.operations.OperationSub;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
@@ -13,9 +13,8 @@ public class SubTest
     @Test
     public void subTest()
     {
-        OperationFactory factory = new OperationFactory();
         ExecutionContext executionContext = new ExecutionContext();
-        Operation sub = factory.getOperationByName("-");
+        OperationSub sub = new OperationSub();
         executionContext.getStack().push(2.0);
         executionContext.getStack().push(10.0);
         sub.execute(executionContext, null);
@@ -25,9 +24,8 @@ public class SubTest
     @Test
     public void subNotEnoughArgsTest()
     {
-        OperationFactory factory = new OperationFactory();
         ExecutionContext executionContext = new ExecutionContext();
-        Operation sub = factory.getOperationByName("-");
+        OperationSub sub = new OperationSub();
         executionContext.getStack().push(2.0);
         assertThrows(InvalidStackSize.class, () -> sub.execute(executionContext, null));        
     }
@@ -35,9 +33,8 @@ public class SubTest
     @Test
     public void subEmptyStackTest()
     {
-        OperationFactory factory = new OperationFactory();
         ExecutionContext executionContext = new ExecutionContext();
-        Operation sub = factory.getOperationByName("-");
+        OperationSub sub = new OperationSub();
         assertThrows(InvalidStackSize.class, () -> sub.execute(executionContext, null));        
     }
 }
