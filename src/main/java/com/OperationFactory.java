@@ -6,25 +6,22 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
 
+import java.util.logging.Level;
+
 import com.operations.Operation;
 
 public class OperationFactory 
 {
     private Map<String, Operation> operationMap;
-    public OperationFactory()
+    public OperationFactory() throws IOException, NullPointerException
     {
+        CalculatorLogger log = new CalculatorLogger();
+
         operationMap = new HashMap<>();
         Properties properties = new Properties();
         
         InputStream in = OperationFactory.class.getResourceAsStream("Operations.properties");
-        try
-        {
-            properties.load(in);
-        }
-        catch(IOException e)
-        {
-            System.err.println("Error while loading properties file: " + e.getLocalizedMessage());
-        }
+        properties.load(in);
 
         for(String operationName : properties.stringPropertyNames())
         {
@@ -38,15 +35,15 @@ public class OperationFactory
                 }
                 catch (ClassNotFoundException e)
                 {
-                    System.err.println("Failed to read class: " + operationName);
+                    log.getExceptionMessage(Level.SEVERE, e);
                 }
                 catch (InstantiationException | IllegalAccessException e)
                 {
-                    System.err.println("Failed to instantiate operation: " + operationName);
+                    log.getExceptionMessage(Level.SEVERE, e);
                 }
                 catch (Exception e)
                 {
-                    System.err.println(e);
+                    log.getExceptionMessage(Level.SEVERE, e);
                 }
             }
         }
