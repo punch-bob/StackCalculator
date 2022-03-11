@@ -6,7 +6,7 @@ public class Variable
 
     public Variable(String value)
     {
-        if (value.equals(null))
+        if (value == null)
         {
             throw new NullPointerException("Variable missing!");
         }
