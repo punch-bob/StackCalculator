@@ -6,8 +6,6 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 import java.util.logging.Level;
-import java.util.logging.LogManager;
-import java.util.logging.Logger;
 
 import com.exception.CalculatorException;
 import com.exception.undeclared_data_exceptions.UndeclaredOperation;
@@ -18,16 +16,7 @@ public class Main
     
     public static void main(String[] args)
     {
-        //config logging
-        try 
-        {
-            LogManager.getLogManager().readConfiguration(Main.class.getResourceAsStream("./resourses/logging.properties"));
-        } 
-        catch (SecurityException | IOException e) 
-        {
-            e.printStackTrace();
-        }
-        Logger log = Logger.getLogger(Main.class.getName());
+        CalculatorLogger log = new CalculatorLogger();
 
         //choose stream
         BufferedReader in = null;
@@ -39,8 +28,8 @@ public class Main
             }
             catch(IOException e)
             {
-                System.err.println("Error while reading file: " + e.getLocalizedMessage());
-                log.log(Level.INFO, "Exception: ", e);
+                log.getExceptionMessage(Level.SEVERE, e);
+                System.exit(1);
             }
         }
         else
@@ -53,34 +42,35 @@ public class Main
         {
             OperationFactory factory = new OperationFactory();
             ExecutionContext executionContext = new ExecutionContext();
-            String comandLine = in.readLine();
-            while (comandLine != null) 
+            String operationLine = new String();
+            while (operationLine != null) 
             {
+                operationLine = in.readLine();
                 try 
                 {
-                    String slpitedComandLine[] = comandLine.split(" ");
-                    Operation operation = factory.getOperationByName(slpitedComandLine[0]);
+                    OperationLineParser operationLineParser = new OperationLineParser();
+                    String slpitedOperationLine[] = operationLineParser.parseLine(operationLine);
+
+                    Operation operation = factory.getOperationByName(slpitedOperationLine[0]);
                     if (operation != null)
                     {
-                        operation.execute(executionContext, slpitedComandLine);
+                        operation.execute(executionContext, slpitedOperationLine);
+                        log.getInfoMessage(slpitedOperationLine[0]);
                     }
                     else
                     {
-                        throw new UndeclaredOperation(slpitedComandLine[0]);
+                        throw new UndeclaredOperation(slpitedOperationLine[0]);
                     }
                 }
                 catch (CalculatorException | ArrayIndexOutOfBoundsException e)
                 {
-                    e.printStackTrace();
-                    log.log(Level.INFO, "Exception: ", e);
+                    log.getExceptionMessage(Level.WARNING, e);
                 }
-                comandLine = in.readLine();
             }
         }
-        catch(IOException e)
+        catch(IOException | NullPointerException e)
         {
-           System.err.println("Error while reading file: " + e.getLocalizedMessage());
-           log.log(Level.INFO, "Exception: ", e);
+            log.getExceptionMessage(Level.SEVERE, e);
         }
     }
 }
