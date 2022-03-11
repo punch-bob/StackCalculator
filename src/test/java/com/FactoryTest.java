@@ -7,78 +7,90 @@ import com.operations.*;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertSame;
 
+import java.io.IOException;
+
 public class FactoryTest 
 {
-    OperationFactory factory = new OperationFactory();
+    OperationFactory factory;
 
     //Correct tests
     @Test
-    public void createDefineTest()
+    public void createDefineTest() throws NullPointerException, IOException
     {
+        this.factory = new OperationFactory();
         Operation operation = factory.getOperationByName("DEFINE");
         assertSame(operation.getClass(), OperationDefine.class);
     }
 
     @Test
-    public void createAddTest()
+    public void createAddTest() throws NullPointerException, IOException
     {
+        this.factory = new OperationFactory();
         Operation operation = factory.getOperationByName("+");
         assertSame(operation.getClass(), OperationAdd.class);
     }
 
     @Test
-    public void createDivTest()
+    public void createDivTest() throws NullPointerException, IOException
     {
+        this.factory = new OperationFactory();
         Operation operation = factory.getOperationByName("/");
         assertSame(operation.getClass(), OperationDiv.class);
     }
 
     @Test
-    public void createMultTest()
+    public void createMultTest() throws NullPointerException, IOException
     {
+        this.factory = new OperationFactory();
         Operation operation = factory.getOperationByName("*");
         assertSame(operation.getClass(), OperationMult.class);
     }
 
     @Test
-    public void createPopTest()
+    public void createPopTest() throws NullPointerException, IOException
     {
+        this.factory = new OperationFactory();
         Operation operation = factory.getOperationByName("POP");
         assertSame(operation.getClass(), OperationPop.class);
     }
 
     @Test
-    public void createPrintTest()
+    public void createPrintTest() throws NullPointerException, IOException
     {
+        this.factory = new OperationFactory();
         Operation operation = factory.getOperationByName("Print");
         assertSame(operation.getClass(), OperationPrint.class);
     }
 
     @Test
-    public void createPushTest()
+    public void createPushTest() throws NullPointerException, IOException
     {
+        this.factory = new OperationFactory();
         Operation operation = factory.getOperationByName("PUSH");
         assertSame(operation.getClass(), OperationPush.class);
     }
 
     @Test
-    public void createSqrtTest()
+    public void createSqrtTest() throws NullPointerException, IOException
     {
+        this.factory = new OperationFactory();
         Operation operation = factory.getOperationByName("SQRT");
         assertSame(operation.getClass(), OperationSqrt.class);
     }
 
     @Test
-    public void createSubTest()
+    public void createSubTest() throws NullPointerException, IOException
     {
+        this.factory = new OperationFactory();
         Operation operation = factory.getOperationByName("-");
         assertSame(operation.getClass(), OperationSub.class);
     }
 
     //Uncorrect test
     @Test
-    public void createUndeclaredOperationTest()
+    public void createUndeclaredOperationTest() throws NullPointerException, IOException
     {
+        this.factory = new OperationFactory();
         Operation operation = factory.getOperationByName("add");
         assertNull(operation);
     }
