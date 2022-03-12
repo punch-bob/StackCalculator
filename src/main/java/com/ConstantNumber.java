@@ -4,7 +4,7 @@ public class ConstantNumber
 {
     private Double number;
 
-    public ConstantNumber(String str)
+    public ConstantNumber(String str) throws NumberFormatException, NullPointerException
     {
         this.number = Double.parseDouble(str);
     }

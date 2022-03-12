@@ -1,34 +1,100 @@
-мар. 11, 2022 11:21:58 PM com.CalculatorLogger getExceptionMessage
+мар. 12, 2022 8:58:13 PM com.CalculatorLogger getInfoMessage
+INFO: Operation performed: push
+мар. 12, 2022 8:58:16 PM com.CalculatorLogger getExceptionMessage
 WARNING: Exception: 
-com.exception.stack_size_exception.InvalidStackSize: Not enought numbers on the stack to perfome the operation: POP
-	at com.operations.OperationPop.execute(OperationPop.java:16)
-	at com.Main.main(Main.java:57)
+com.exception.undeclared_data_exceptions.UndeclaredOperation: The operation 'pp' wasn't found!
+	at com.Main.main(Main.java:62)
 
-мар. 11, 2022 11:22:01 PM com.CalculatorLogger getExceptionMessage
-WARNING: Exception: 
-com.exception.stack_size_exception.InvalidStackSize: Not enought numbers on the stack to perfome the operation: PRINT
-	at com.operations.OperationPrint.execute(OperationPrint.java:16)
-	at com.Main.main(Main.java:57)
-
-мар. 11, 2022 11:22:04 PM com.CalculatorLogger getInfoMessage
+мар. 12, 2022 8:58:18 PM com.CalculatorLogger getInfoMessage
+INFO: Operation performed: pop
+мар. 12, 2022 8:58:20 PM com.CalculatorLogger getInfoMessage
 INFO: Operation performed: push
-мар. 11, 2022 11:22:08 PM com.CalculatorLogger getInfoMessage
+мар. 12, 2022 8:58:22 PM com.CalculatorLogger getInfoMessage
 INFO: Operation performed: push
-мар. 11, 2022 11:22:16 PM com.CalculatorLogger getInfoMessage
+мар. 12, 2022 8:58:24 PM com.CalculatorLogger getInfoMessage
+INFO: Operation performed: push
+мар. 12, 2022 8:58:24 PM com.CalculatorLogger getInfoMessage
+INFO: Operation performed: push
+мар. 12, 2022 8:58:27 PM com.CalculatorLogger getInfoMessage
 INFO: Operation performed: +
-мар. 11, 2022 11:22:26 PM com.CalculatorLogger getInfoMessage
-INFO: Operation performed: push
-мар. 11, 2022 11:22:27 PM com.CalculatorLogger getInfoMessage
+мар. 12, 2022 8:58:30 PM com.CalculatorLogger getInfoMessage
 INFO: Operation performed: +
-мар. 11, 2022 11:22:37 PM com.CalculatorLogger getInfoMessage
-INFO: Operation performed: push
-мар. 11, 2022 11:22:40 PM com.CalculatorLogger getInfoMessage
-INFO: Operation performed: /
-мар. 11, 2022 11:22:46 PM com.CalculatorLogger getInfoMessage
+мар. 12, 2022 8:58:32 PM com.CalculatorLogger getInfoMessage
+INFO: Operation performed: +
+мар. 12, 2022 8:58:42 PM com.CalculatorLogger getInfoMessage
 INFO: Operation performed: sqrt
-мар. 11, 2022 11:22:48 PM com.CalculatorLogger getInfoMessage
+мар. 12, 2022 8:58:44 PM com.CalculatorLogger getInfoMessage
 INFO: Operation performed: print
-мар. 11, 2022 11:22:50 PM com.CalculatorLogger getExceptionMessage
+мар. 12, 2022 8:58:49 PM com.CalculatorLogger getInfoMessage
+INFO: Operation performed: sqrt
+мар. 12, 2022 8:58:54 PM com.CalculatorLogger getExceptionMessage
+WARNING: Exception: 
+com.exception.argument_exceptions.InvalidNumberFormat: Incorrect format of number in: DEFINE operation!
+	at com.operations.OperationDefine.execute(OperationDefine.java:28)
+	at com.Main.main(Main.java:57)
+Caused by: java.lang.NumberFormatException: For input string: "s"
+	at java.base/jdk.internal.math.FloatingDecimal.readJavaFormatString(FloatingDecimal.java:2054)
+	at java.base/jdk.internal.math.FloatingDecimal.parseDouble(FloatingDecimal.java:110)
+	at java.base/java.lang.Double.parseDouble(Double.java:651)
+	at com.ConstantNumber.<init>(ConstantNumber.java:9)
+	at com.operations.OperationDefine.execute(OperationDefine.java:19)
+	... 1 more
+
+мар. 12, 2022 8:58:59 PM com.CalculatorLogger getInfoMessage
+INFO: Operation performed: define
+мар. 12, 2022 8:59:03 PM com.CalculatorLogger getInfoMessage
+INFO: Operation performed: print
+мар. 12, 2022 8:59:11 PM com.CalculatorLogger getInfoMessage
+INFO: Operation performed: push
+мар. 12, 2022 8:59:21 PM com.CalculatorLogger getInfoMessage
+INFO: Operation performed: define
+мар. 12, 2022 8:59:23 PM com.CalculatorLogger getInfoMessage
+INFO: Operation performed: push
+мар. 12, 2022 8:59:27 PM com.CalculatorLogger getInfoMessage
+INFO: Operation performed: +
+мар. 12, 2022 8:59:30 PM com.CalculatorLogger getInfoMessage
+INFO: Operation performed: print
+мар. 12, 2022 8:59:33 PM com.CalculatorLogger getInfoMessage
+INFO: Operation performed: +
+мар. 12, 2022 8:59:35 PM com.CalculatorLogger getInfoMessage
+INFO: Operation performed: print
+мар. 12, 2022 8:59:45 PM com.CalculatorLogger getInfoMessage
+INFO: Operation performed: define
+мар. 12, 2022 8:59:50 PM com.CalculatorLogger getInfoMessage
+INFO: Operation performed: push
+мар. 12, 2022 8:59:58 PM com.CalculatorLogger getInfoMessage
+INFO: Operation performed: /
+мар. 12, 2022 9:00:01 PM com.CalculatorLogger getInfoMessage
+INFO: Operation performed: print
+мар. 12, 2022 9:00:14 PM com.CalculatorLogger getInfoMessage
+INFO: Operation performed: push
+мар. 12, 2022 9:00:16 PM com.CalculatorLogger getInfoMessage
+INFO: Operation performed: +
+мар. 12, 2022 9:00:20 PM com.CalculatorLogger getInfoMessage
+INFO: Operation performed: sqrt
+мар. 12, 2022 9:00:22 PM com.CalculatorLogger getInfoMessage
+INFO: Operation performed: print
+мар. 12, 2022 9:00:30 PM com.CalculatorLogger getInfoMessage
+INFO: Operation performed: push
+мар. 12, 2022 9:00:38 PM com.CalculatorLogger getInfoMessage
+INFO: Operation performed: -
+мар. 12, 2022 9:00:43 PM com.CalculatorLogger getInfoMessage
+INFO: Operation performed: push
+мар. 12, 2022 9:00:53 PM com.CalculatorLogger getInfoMessage
+INFO: Operation performed: push
+мар. 12, 2022 9:00:55 PM com.CalculatorLogger getInfoMessage
+INFO: Operation performed: -
+мар. 12, 2022 9:00:57 PM com.CalculatorLogger getInfoMessage
+INFO: Operation performed: +
+мар. 12, 2022 9:00:59 PM com.CalculatorLogger getInfoMessage
+INFO: Operation performed: print
+мар. 12, 2022 9:01:08 PM com.CalculatorLogger getInfoMessage
+INFO: Operation performed: push
+мар. 12, 2022 9:01:10 PM com.CalculatorLogger getInfoMessage
+INFO: Operation performed: /
+мар. 12, 2022 9:01:13 PM com.CalculatorLogger getInfoMessage
+INFO: Operation performed: print
+мар. 12, 2022 9:01:14 PM com.CalculatorLogger getExceptionMessage
 SEVERE: Exception: 
 java.lang.NullPointerException: Cannot invoke "String.split(String)" because "operationLine" is null
 	at com.OperationLineParser.parseLine(OperationLineParser.java:7)
