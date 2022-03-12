@@ -1,16 +1,11 @@
-package com;
+package com.operations.value_objects;
 
 public class Variable 
 {
     private final String value;
 
-    public Variable(String value)
+    public Variable(String value) throws IllegalArgumentException, NullPointerException
     {   
-        this.value = value;
-    }
-
-    public String getVar()
-    {
         if (value == null)
         {
             throw new NullPointerException("Variable missing!");
@@ -23,6 +18,11 @@ public class Variable
         {
             throw new IllegalArgumentException("Variable must contain only numbers and letters!");
         }
+        this.value = value;
+    }
+
+    public String getVar() 
+    {
         return value;
     }
 }
