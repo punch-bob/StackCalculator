@@ -2,10 +2,10 @@ package com.operations;
 
 import java.util.Stack;
 
-import com.ConstantNumber;
 import com.ExecutionContext;
 import com.exception.argument_exceptions.ArgumentsCountException;
 import com.exception.undeclared_data_exceptions.UndeclaredVariable;
+import com.operations.value_objects.ConstantNumber;
 
 public class OperationPush implements Operation
 {

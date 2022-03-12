@@ -17,7 +17,7 @@ public class Main
     public static void main(String[] args)
     {
         CalculatorLogger log = new CalculatorLogger();
-
+        
         //choose stream
         BufferedReader in = null;
         if(args.length > 0)

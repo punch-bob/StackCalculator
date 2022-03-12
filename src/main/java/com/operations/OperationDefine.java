@@ -1,12 +1,12 @@
 package com.operations;
 
-import com.ConstantNumber;
 import com.ExecutionContext;
-import com.Variable;
 import com.exception.argument_exceptions.InvalidArgument;
 import com.exception.argument_exceptions.ArgumentsCountException;
 import com.exception.argument_exceptions.InvalidNumberFormat;
 import com.exception.argument_exceptions.InvalidVariableName;
+import com.operations.value_objects.ConstantNumber;
+import com.operations.value_objects.Variable;
 
 public class OperationDefine implements Operation
 {
