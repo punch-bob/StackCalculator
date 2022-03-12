@@ -1,24 +1,29 @@
-мар. 12, 2022 10:36:09 PM com.CalculatorLogger getInfoMessage
-INFO: Operation performed: define
-мар. 12, 2022 10:36:11 PM com.CalculatorLogger getExceptionMessage
+мар. 12, 2022 11:48:29 PM com.CalculatorLogger getExceptionMessage
 WARNING: Exception: 
 com.exception.argument_exceptions.InvalidVariableName: Incorrect format of variable name in: DEFINE operation!
 	at com.operations.OperationDefine.execute(OperationDefine.java:32)
 	at com.Main.main(Main.java:57)
 Caused by: java.lang.IllegalArgumentException: Variable must start with a letter!
-	at com.Variable.<init>(Variable.java:15)
-	at com.operations.OperationDefine.execute(OperationDefine.java:18)
+	at com.Variable.getVar(Variable.java:20)
+	at com.operations.OperationDefine.execute(OperationDefine.java:20)
 	... 1 more
 
-мар. 12, 2022 10:36:18 PM com.CalculatorLogger getInfoMessage
+мар. 12, 2022 11:48:30 PM com.CalculatorLogger getInfoMessage
+INFO: Operation performed: define
+мар. 12, 2022 11:48:38 PM com.CalculatorLogger getExceptionMessage
+WARNING: Exception: 
+com.exception.argument_exceptions.ArgumentsCountException: Incorrect format of operation line, not enought arguments for operation PUSH!
+	at com.operations.OperationPush.execute(OperationPush.java:37)
+	at com.Main.main(Main.java:57)
+Caused by: java.lang.ArrayIndexOutOfBoundsException: Index 1 out of bounds for length 1
+	at com.operations.OperationPush.execute(OperationPush.java:18)
+	... 1 more
+
+мар. 12, 2022 11:48:45 PM com.CalculatorLogger getInfoMessage
 INFO: Operation performed: push
-мар. 12, 2022 10:36:23 PM com.CalculatorLogger getInfoMessage
-INFO: Operation performed: push
-мар. 12, 2022 10:36:24 PM com.CalculatorLogger getInfoMessage
-INFO: Operation performed: +
-мар. 12, 2022 10:36:26 PM com.CalculatorLogger getInfoMessage
+мар. 12, 2022 11:48:48 PM com.CalculatorLogger getInfoMessage
 INFO: Operation performed: print
-мар. 12, 2022 10:40:29 PM com.CalculatorLogger getExceptionMessage
+мар. 12, 2022 11:48:51 PM com.CalculatorLogger getExceptionMessage
 SEVERE: Exception: 
 java.lang.NullPointerException: Cannot invoke "String.split(String)" because "operationLine" is null
 	at com.OperationLineParser.parseLine(OperationLineParser.java:7)
