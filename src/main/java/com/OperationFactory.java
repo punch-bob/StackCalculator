@@ -20,7 +20,7 @@ public class OperationFactory
         operationMap = new HashMap<>();
         Properties properties = new Properties();
         
-        InputStream in = OperationFactory.class.getResourceAsStream("Operations.properties");
+        InputStream in = OperationFactory.class.getClassLoader().getResourceAsStream("Operations.properties");
         properties.load(in);
 
         for(String operationName : properties.stringPropertyNames())
