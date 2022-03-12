@@ -14,7 +14,7 @@ public class CalculatorLogger
     {
         try 
         {
-            LogManager.getLogManager().readConfiguration(Main.class.getResourceAsStream("./resourses/logging.properties"));
+            LogManager.getLogManager().readConfiguration(Main.class.getClassLoader().getResourceAsStream("logging.properties"));
         } 
         catch (SecurityException | IOException e) 
         {
