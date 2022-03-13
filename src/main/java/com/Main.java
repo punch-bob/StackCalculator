@@ -29,7 +29,7 @@ public class Main
             catch(IOException e)
             {
                 log.getExceptionMessage(Level.SEVERE, e);
-                System.exit(1);
+                return;
             }
         }
         else
