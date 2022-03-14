@@ -1,38 +1,18 @@
-мар. 13, 2022 12:54:39 AM com.CalculatorLogger getExceptionMessage
-WARNING: Exception: 
-com.exception.argument_exceptions.ArgumentsCountException: Incorrect format of operation line, not enought arguments for operation PUSH!
-	at com.operations.OperationPush.execute(OperationPush.java:37)
-	at com.Main.main(Main.java:57)
-Caused by: java.lang.ArrayIndexOutOfBoundsException: Index 1 out of bounds for length 1
-	at com.operations.OperationPush.execute(OperationPush.java:18)
-	... 1 more
-
-мар. 13, 2022 12:54:41 AM com.CalculatorLogger getExceptionMessage
-WARNING: Exception: 
-com.exception.argument_exceptions.ArgumentsCountException: Incorrect format of operation line, not enought arguments for operation DEFINE!
-	at com.operations.OperationDefine.execute(OperationDefine.java:24)
-	at com.Main.main(Main.java:57)
-Caused by: java.lang.ArrayIndexOutOfBoundsException: Index 1 out of bounds for length 1
-	at com.operations.OperationDefine.execute(OperationDefine.java:18)
-	... 1 more
-
-мар. 13, 2022 12:54:45 AM com.CalculatorLogger getInfoMessage
+мар. 14, 2022 11:14:44 AM com.CalculatorLogger getInfoMessage
 INFO: Operation performed: define
-мар. 13, 2022 12:54:48 AM com.CalculatorLogger getInfoMessage
+мар. 14, 2022 11:14:47 AM com.CalculatorLogger getInfoMessage
 INFO: Operation performed: push
-мар. 13, 2022 12:55:09 AM com.CalculatorLogger getInfoMessage
+мар. 14, 2022 11:14:49 AM com.CalculatorLogger getInfoMessage
 INFO: Operation performed: push
-мар. 13, 2022 12:55:13 AM com.CalculatorLogger getInfoMessage
-INFO: Operation performed: *
-мар. 13, 2022 12:55:20 AM com.CalculatorLogger getInfoMessage
-INFO: Operation performed: print
-мар. 13, 2022 12:55:25 AM com.CalculatorLogger getInfoMessage
+мар. 14, 2022 11:14:50 AM com.CalculatorLogger getInfoMessage
+INFO: Operation performed: +
+мар. 14, 2022 11:14:55 AM com.CalculatorLogger getInfoMessage
 INFO: Operation performed: sqrt
-мар. 13, 2022 12:56:35 AM com.CalculatorLogger getInfoMessage
+мар. 14, 2022 11:14:58 AM com.CalculatorLogger getInfoMessage
 INFO: Operation performed: print
-мар. 13, 2022 12:56:38 AM com.CalculatorLogger getExceptionMessage
+мар. 14, 2022 11:14:59 AM com.CalculatorLogger getExceptionMessage
 SEVERE: Exception: 
 java.lang.NullPointerException: Cannot invoke "String.split(String)" because "operationLine" is null
 	at com.OperationLineParser.parseLine(OperationLineParser.java:7)
-	at com.Main.main(Main.java:52)
+	at com.Main.main(Main.java:46)
 
