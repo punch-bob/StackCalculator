@@ -8,20 +8,28 @@ import java.util.Properties;
 
 import java.util.logging.Level;
 
+import com.exception.missing_data_exception.MissingDataException;
 import com.operations.Operation;
 
 public class OperationFactory 
 {
     private Map<String, Operation> operationMap;
-    public OperationFactory() throws IOException, NullPointerException
+    public OperationFactory() throws IOException
     {
         CalculatorLogger log = new CalculatorLogger();
 
         operationMap = new HashMap<>();
         Properties properties = new Properties();
+        try
+        {
+            InputStream in = OperationFactory.class.getClassLoader().getResourceAsStream("Operations.properties");
+            properties.load(in);
+        }
+        catch (NullPointerException e)
+        {
+            throw new MissingDataException("Properties file not found!", e);
+        }
         
-        InputStream in = OperationFactory.class.getClassLoader().getResourceAsStream("Operations.properties");
-        properties.load(in);
 
         for(String operationName : properties.stringPropertyNames())
         {
