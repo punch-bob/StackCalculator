@@ -1,18 +1,10 @@
-мар. 14, 2022 11:14:44 AM com.CalculatorLogger getInfoMessage
-INFO: Operation performed: define
-мар. 14, 2022 11:14:47 AM com.CalculatorLogger getInfoMessage
+мар. 14, 2022 11:36:09 AM com.CalculatorLogger getInfoMessage
 INFO: Operation performed: push
-мар. 14, 2022 11:14:49 AM com.CalculatorLogger getInfoMessage
+мар. 14, 2022 11:36:14 AM com.CalculatorLogger getInfoMessage
 INFO: Operation performed: push
-мар. 14, 2022 11:14:50 AM com.CalculatorLogger getInfoMessage
+мар. 14, 2022 11:36:20 AM com.CalculatorLogger getInfoMessage
 INFO: Operation performed: +
-мар. 14, 2022 11:14:55 AM com.CalculatorLogger getInfoMessage
+мар. 14, 2022 11:36:24 AM com.CalculatorLogger getInfoMessage
 INFO: Operation performed: sqrt
-мар. 14, 2022 11:14:58 AM com.CalculatorLogger getInfoMessage
+мар. 14, 2022 11:36:26 AM com.CalculatorLogger getInfoMessage
 INFO: Operation performed: print
-мар. 14, 2022 11:14:59 AM com.CalculatorLogger getExceptionMessage
-SEVERE: Exception: 
-java.lang.NullPointerException: Cannot invoke "String.split(String)" because "operationLine" is null
-	at com.OperationLineParser.parseLine(OperationLineParser.java:7)
-	at com.Main.main(Main.java:46)
-

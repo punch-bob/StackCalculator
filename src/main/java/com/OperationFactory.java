@@ -8,13 +8,15 @@ import java.util.Properties;
 
 import java.util.logging.Level;
 
+import javax.imageio.IIOException;
+
 import com.exception.missing_data_exception.MissingDataException;
 import com.operations.Operation;
 
 public class OperationFactory 
 {
     private Map<String, Operation> operationMap;
-    public OperationFactory() throws IOException
+    public OperationFactory() throws IIOException
     {
         CalculatorLogger log = new CalculatorLogger();
 
@@ -28,6 +30,10 @@ public class OperationFactory
         catch (NullPointerException e)
         {
             throw new MissingDataException("Properties file not found!", e);
+        }
+        catch (IOException e)
+        {
+            throw new IIOException("Error while reading properties file", e);
         }
         
 
