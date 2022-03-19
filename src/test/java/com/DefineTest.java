@@ -3,6 +3,7 @@ package com;
 import org.junit.jupiter.api.Test;
 
 import com.exception.argument_exceptions.ArgumentsCountException;
+import com.exception.argument_exceptions.InvalidArgument;
 import com.exception.argument_exceptions.InvalidNumberFormat;
 import com.exception.argument_exceptions.InvalidVariableName;
 import com.operations.OperationDefine;
@@ -13,7 +14,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 public class DefineTest
 {
     @Test
-    public void defineTest()
+    public void defineTest() throws InvalidArgument
     {
         ExecutionContext executionContext = new ExecutionContext();
         OperationDefine define = new OperationDefine();
@@ -23,7 +24,7 @@ public class DefineTest
     } 
 
     @Test
-    public void redefineTest()
+    public void redefineTest() throws InvalidArgument
     {
         ExecutionContext executionContext = new ExecutionContext();
         OperationDefine define = new OperationDefine();

@@ -12,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 public class DivTest 
 {
     @Test
-    public void divTest()
+    public void divTest() throws DivisionByZero, InvalidStackSize
     {
         ExecutionContext executionContext = new ExecutionContext();
         OperationDiv div = new OperationDiv();

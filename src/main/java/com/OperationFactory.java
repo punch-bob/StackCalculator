@@ -16,7 +16,7 @@ import com.operations.Operation;
 public class OperationFactory 
 {
     private Map<String, Operation> operationMap;
-    public OperationFactory() throws IIOException
+    public OperationFactory() throws IIOException, MissingDataException
     {
         CalculatorLogger log = new CalculatorLogger();
 

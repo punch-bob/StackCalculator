@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 public class PopTest 
 {
     @Test
-    public void popTest()
+    public void popTest() throws InvalidStackSize
     {
         ExecutionContext executionContext = new ExecutionContext();
         OperationPop pop = new OperationPop();

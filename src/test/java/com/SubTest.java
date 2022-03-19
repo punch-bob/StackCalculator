@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 public class SubTest 
 {
     @Test
-    public void subTest()
+    public void subTest() throws InvalidStackSize
     {
         ExecutionContext executionContext = new ExecutionContext();
         OperationSub sub = new OperationSub();

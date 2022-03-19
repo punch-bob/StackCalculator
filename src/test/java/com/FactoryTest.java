@@ -2,6 +2,7 @@ package com;
 
 import org.junit.jupiter.api.Test;
 
+import com.exception.missing_data_exception.MissingDataException;
 import com.operations.*;
 
 import static org.junit.jupiter.api.Assertions.assertNull;
@@ -15,7 +16,7 @@ public class FactoryTest
 
     //Correct tests
     @Test
-    public void createDefineTest() throws NullPointerException, IOException
+    public void createDefineTest() throws IOException, MissingDataException
     {
         this.factory = new OperationFactory();
         Operation operation = factory.getOperationByName("DEFINE");
@@ -23,7 +24,7 @@ public class FactoryTest
     }
 
     @Test
-    public void createAddTest() throws NullPointerException, IOException
+    public void createAddTest() throws IOException, MissingDataException
     {
         this.factory = new OperationFactory();
         Operation operation = factory.getOperationByName("+");
@@ -31,7 +32,7 @@ public class FactoryTest
     }
 
     @Test
-    public void createDivTest() throws NullPointerException, IOException
+    public void createDivTest() throws IOException, MissingDataException
     {
         this.factory = new OperationFactory();
         Operation operation = factory.getOperationByName("/");
@@ -39,7 +40,7 @@ public class FactoryTest
     }
 
     @Test
-    public void createMultTest() throws NullPointerException, IOException
+    public void createMultTest() throws IOException, MissingDataException
     {
         this.factory = new OperationFactory();
         Operation operation = factory.getOperationByName("*");
@@ -47,7 +48,7 @@ public class FactoryTest
     }
 
     @Test
-    public void createPopTest() throws NullPointerException, IOException
+    public void createPopTest() throws IOException, MissingDataException
     {
         this.factory = new OperationFactory();
         Operation operation = factory.getOperationByName("POP");
@@ -55,7 +56,7 @@ public class FactoryTest
     }
 
     @Test
-    public void createPrintTest() throws NullPointerException, IOException
+    public void createPrintTest() throws IOException, MissingDataException
     {
         this.factory = new OperationFactory();
         Operation operation = factory.getOperationByName("Print");
@@ -63,7 +64,7 @@ public class FactoryTest
     }
 
     @Test
-    public void createPushTest() throws NullPointerException, IOException
+    public void createPushTest() throws IOException, MissingDataException
     {
         this.factory = new OperationFactory();
         Operation operation = factory.getOperationByName("PUSH");
@@ -71,7 +72,7 @@ public class FactoryTest
     }
 
     @Test
-    public void createSqrtTest() throws NullPointerException, IOException
+    public void createSqrtTest() throws IOException, MissingDataException
     {
         this.factory = new OperationFactory();
         Operation operation = factory.getOperationByName("SQRT");
@@ -79,7 +80,7 @@ public class FactoryTest
     }
 
     @Test
-    public void createSubTest() throws NullPointerException, IOException
+    public void createSubTest() throws IOException, MissingDataException
     {
         this.factory = new OperationFactory();
         Operation operation = factory.getOperationByName("-");
@@ -88,7 +89,7 @@ public class FactoryTest
 
     //Uncorrect test
     @Test
-    public void createUndeclaredOperationTest() throws NullPointerException, IOException
+    public void createUndeclaredOperationTest() throws IOException, MissingDataException
     {
         this.factory = new OperationFactory();
         Operation operation = factory.getOperationByName("add");

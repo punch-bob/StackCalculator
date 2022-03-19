@@ -1,6 +1,6 @@
 package com.exception;
 
-public class CalculatorException extends RuntimeException
+public class CalculatorException extends Exception
 {
     public CalculatorException(String message)
     {

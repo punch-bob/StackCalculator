@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 public class MultTest 
 {
     @Test
-    public void multTest()
+    public void multTest() throws InvalidStackSize
     {
         ExecutionContext executionContext = new ExecutionContext();
         OperationMult mult = new OperationMult();

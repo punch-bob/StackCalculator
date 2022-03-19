@@ -12,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 public class SqrtTest
 {
     @Test
-    public void sqrtTest()
+    public void sqrtTest() throws SqrtOfNegativeNumber, InvalidStackSize
     {
         ExecutionContext executionContext = new ExecutionContext();
         OperationSqrt sqrt = new OperationSqrt();

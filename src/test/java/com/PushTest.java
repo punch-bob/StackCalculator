@@ -12,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 public class PushTest 
 {
     @Test
-    public void pushNotDefineTest()
+    public void pushNotDefineTest() throws ArgumentsCountException, UndeclaredVariable
     {
         ExecutionContext executionContext = new ExecutionContext();
         OperationPush push = new OperationPush();
@@ -22,7 +22,7 @@ public class PushTest
     }
 
     @Test
-    public void pushWithDefineTest()
+    public void pushWithDefineTest() throws ArgumentsCountException, UndeclaredVariable
     {
         ExecutionContext executionContext = new ExecutionContext();
         OperationPush push = new OperationPush();
