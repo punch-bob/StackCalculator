@@ -20,23 +20,28 @@ public class Calculator
             OperationFactory factory = new OperationFactory();
             ExecutionContext executionContext = new ExecutionContext();
             String operationLine = new String();
+            OperationLineParser operationLineParser = new OperationLineParser();
             while (operationLine != null) 
             {
                 operationLine = in.readLine();
                 try 
                 {
-                    OperationLineParser operationLineParser = new OperationLineParser();
-                    String slpitedOperationLine[] = operationLineParser.parseLine(operationLine);
-
-                    Operation operation = factory.getOperationByName(slpitedOperationLine[0]);
+                    String splitedOperationLine[] = operationLineParser.parseLine(operationLine);
+                    if (splitedOperationLine == null)
+                    {
+                        log.getInfoMessage("Comment: " + operationLine);
+                        continue;
+                    }
+                    String operationName = splitedOperationLine[0];
+                    Operation operation = factory.getOperationByName(operationName);
                     if (operation != null)
                     {
-                        operation.execute(executionContext, slpitedOperationLine);
-                        log.getInfoMessage(slpitedOperationLine[0]);
+                        operation.execute(executionContext, splitedOperationLine);
+                        log.getInfoMessage(operationName);
                     }
                     else
                     {
-                        throw new UndeclaredOperation(slpitedOperationLine[0]);
+                        throw new UndeclaredOperation(operationName);
                     }
                 }
                 catch (CalculatorException | ArrayIndexOutOfBoundsException e)

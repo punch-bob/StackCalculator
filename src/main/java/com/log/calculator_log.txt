@@ -1,10 +1,24 @@
-мар. 19, 2022 9:11:38 PM com.CalculatorLogger getExceptionMessage
-WARNING: Exception: 
-com.exception.argument_exceptions.ArgumentsCountException: Incorrect format of operation line, not enought arguments for operation PUSH!
-	at com.operations.OperationPush.execute(OperationPush.java:37)
-	at com.Calculator.calculate(Calculator.java:34)
-	at com.Main.main(Main.java:28)
-Caused by: java.lang.ArrayIndexOutOfBoundsException: Index 1 out of bounds for length 1
-	at com.operations.OperationPush.execute(OperationPush.java:18)
-	... 2 more
-
+мар. 20, 2022 1:18:06 PM com.CalculatorLogger getInfoMessage
+INFO: Operation performed: define
+мар. 20, 2022 1:18:10 PM com.CalculatorLogger getInfoMessage
+INFO: Operation performed: push
+мар. 20, 2022 1:18:18 PM com.CalculatorLogger getInfoMessage
+INFO: Operation performed: push
+мар. 20, 2022 1:18:20 PM com.CalculatorLogger getInfoMessage
+INFO: Operation performed: *
+мар. 20, 2022 1:18:23 PM com.CalculatorLogger getInfoMessage
+INFO: Operation performed: sqrt
+мар. 20, 2022 1:18:24 PM com.CalculatorLogger getInfoMessage
+INFO: Operation performed: print
+мар. 20, 2022 1:18:28 PM com.CalculatorLogger getInfoMessage
+INFO: Operation performed: sqrt
+мар. 20, 2022 1:18:29 PM com.CalculatorLogger getInfoMessage
+INFO: Operation performed: print
+мар. 20, 2022 1:18:36 PM com.CalculatorLogger getInfoMessage
+INFO: Operation performed: define
+мар. 20, 2022 1:18:38 PM com.CalculatorLogger getInfoMessage
+INFO: Operation performed: push
+мар. 20, 2022 1:18:41 PM com.CalculatorLogger getInfoMessage
+INFO: Operation performed: *
+мар. 20, 2022 1:18:44 PM com.CalculatorLogger getInfoMessage
+INFO: Operation performed: print
