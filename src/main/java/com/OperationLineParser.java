@@ -4,10 +4,11 @@ public class OperationLineParser
 {
     public String[] parseLine(String operationLine) 
     {
-        if (operationLine.charAt(0) == '#')
+        String[] parsedline = operationLine.split(" ");
+        if (parsedline[0] == "#" || parsedline[0].charAt(0) == '#')
         {
             return null;
         }
-        return operationLine.split(" ");
+        return parsedline;
     }
 }
